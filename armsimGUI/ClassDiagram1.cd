@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="armsimGUI.Computer">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AMAAAAACBEABIAMAxAYAAAQhIAGAAAQANYIQAAACEAI=</HashCode>
+      <FileName>Computer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="armsimGUI.CPU">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAEAAABAAACAERAAAEAAAABQEAAAAAACQAAREAABAo=</HashCode>
+      <FileName>CPU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="armsimGUI.Memory">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAEAAEAAAAAAAAAACAIAAAggAAAAMAgAAAAAAIAAAA=</HashCode>
+      <FileName>Memory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="armsimGUI.testRAM">
+    <Position X="4.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Memory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="armsimGUI.Instruction">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAlCBECQBAY4AAAAgBAAihgBEggkRAhEAAAoCAQBAYU=</HashCode>
+      <FileName>Instruction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="armsimGUI.Data">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IIAABAAAAAgIAAAAIAAACgAAAAgAAAAAAAAACAAAAA0=</HashCode>
+      <FileName>Data.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="armsimGUI.LdStore">
+    <Position X="9.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgCAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAgAAVLAAw=</HashCode>
+      <FileName>LoadStore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="armsimGUI.Operation">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="armsimGUI.Operation.op2Type" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Operation.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="armsimGUI.Operation.shiftType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Operation.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>IBIIAAAQBAQAAYQAAEEgAIABAYtKAAQAgAACAAEAYCA=</HashCode>
+      <FileName>Operation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="armsimGUI.LoadStoreMultiple">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgCABAAAAIAAAAAAAAAAAAAAAAAAAAAAAAgAAVLAAQ=</HashCode>
+      <FileName>LoadStoreMultiple.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="armsimGUI.Disassembly">
+    <Position X="2.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAAQAAAAAAEAAAAAgAAAIAAAgAIAACAACAAAAAAAQAA=</HashCode>
+      <FileName>Disassembly.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="armsimGUI.BarrelShifter">
+    <Position X="4.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAgAAAAAAAAAAAAAAAAAAAAAAAAAAhAA=</HashCode>
+      <FileName>BarrelShifter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="armsimGUI.InstructionFactory">
+    <Position X="2.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructionFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="armsimGUI.SWI">
+    <Position X="0.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAw=</HashCode>
+      <FileName>SWI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="armsimGUI.Branch">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAQAAAAAAAAAFAABAAAAAAAAAAAw=</HashCode>
+      <FileName>Branch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="armsimGUI.ObserverBridge">
+    <Position X="4.25" Y="7.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="armsimGUI.ObserverBridge.StatusUpdate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ObserverBridge.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="armsimGUI.ObserverBridge.TextUpdate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ObserverBridge.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAIAAAABAAAAEAAAAAAA=</HashCode>
+      <FileName>ObserverBridge.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="armsimGUI.ObserverTest">
+    <Position X="4.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>ObserverTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
