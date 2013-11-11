@@ -281,7 +281,7 @@ namespace armsimGUI
                 stepToolBtn.Enabled = false;
             }
         }
-        
+
         private void breakPtRunBtn_Click(object sender, EventArgs e)
         {
             int val;
@@ -449,7 +449,11 @@ namespace armsimGUI
             stopToolBtn.Enabled = false;
             comp.ResetEnd();
             Computer.ResetInput();
-            tracefile = new StreamWriter(Directory.GetCurrentDirectory() + "\\trace.log", false);
+            try
+            {
+                tracefile = new StreamWriter(Directory.GetCurrentDirectory() + "\\trace.log", false);
+            }
+            catch { tracefile.Dispose(); }
         }
 
         private void ResetDisasmTesting()
@@ -521,15 +525,6 @@ namespace armsimGUI
             FindItemInMemoryPanel(n);
         }
 
-        private static uint ParseAddress(string address)
-        {
-            // if <address> is not evenly divisible by 16, subtract the extra amount to ensure address location will succeed in ListView search
-            int n = Int32.Parse(address, System.Globalization.NumberStyles.AllowHexSpecifier);
-            int j = n % 16;
-            n -= j;
-            return (uint)n;
-        }
-
         private void FindItemInMemoryPanel(uint address)
         {
             string addr = "0x" + address.ToString("x8");
@@ -537,6 +532,15 @@ namespace armsimGUI
             // locate the address in the Memory panel
             ListViewItem i = memoryListView.FindItemWithText(addr, false, 0, false);
             if (i != null) memoryListView.TopItem = i;
+        }
+
+        private static uint ParseAddress(string address)
+        {
+            // if <address> is not evenly divisible by 16, subtract the extra amount to ensure address location will succeed in ListView search
+            int n = Int32.Parse(address, System.Globalization.NumberStyles.AllowHexSpecifier);
+            int j = n % 16;
+            n -= j;
+            return (uint)n;
         }
 
         //--------------------------------------------------------------
@@ -584,22 +588,33 @@ namespace armsimGUI
             return checksum;
         }
 
-        private void updateStackPanel()
+        private void updateStackPanel(bool findBtnClick)
         {
             uint stackpointer = ParseAddress(Computer.GetCPU().registers.ReadWord((uint)regs.SP).ToString("x8"));
             stackpointer -= 0x00000050;
 
             stackPanel.Items.Clear();
+             
+                for (int i = 0; i < 0x00000b0; i += 16, stackpointer += 16)
+                {
+               ListViewItem item = new ListViewItem("0x" + stackpointer.ToString("x8"));
 
-            for (int i = 0; i < 0x00000b0; i += 16, stackpointer += 16)
-            {
-                ListViewItem item = new ListViewItem("0x" + stackpointer.ToString("x8"));
-                item.SubItems.Add("0x" + Computer.GetCPU().progRAM.ReadWord(stackpointer).ToString("x8"));
-                item.SubItems.Add("0x" + Computer.GetCPU().progRAM.ReadWord(stackpointer + 4).ToString("x8"));
-                item.SubItems.Add("0x" + Computer.GetCPU().progRAM.ReadWord(stackpointer + 8).ToString("x8"));
-                item.SubItems.Add("0x" + Computer.GetCPU().progRAM.ReadWord(stackpointer + 12).ToString("x8"));
-                stackPanel.Items.Add(item);
-            }
+                        for (uint j = 0; j < 16; j++)
+                        {
+                            byte b = comp.progRAM.ReadByte(stackpointer | j);
+                            item.SubItems.Add(b.ToString("x2"));
+                        }
+
+                        stackPanel.Items.Add(item);
+                    
+                }
+
+                //item.SubItems.Add("0x" + Computer.GetCPU().progRAM.ReadWord(stackpointer).ToString("x8"));
+                //item.SubItems.Add("0x" + Computer.GetCPU().progRAM.ReadWord(stackpointer + 4).ToString("x8"));
+                //item.SubItems.Add("0x" + Computer.GetCPU().progRAM.ReadWord(stackpointer + 8).ToString("x8"));
+                //item.SubItems.Add("0x" + Computer.GetCPU().progRAM.ReadWord(stackpointer + 12).ToString("x8"));
+                //stackPanel.Items.Add(item);
+            
         }
 
         //--------------------------------------------------------------
@@ -669,7 +684,7 @@ namespace armsimGUI
                         byte b = comp.progRAM.ReadByte(addr | j);
                         item.SubItems.Add(b.ToString("x2"));
                     }
-                    
+
                     //item.SubItems.Add("0x" + firstWord.ToString("x8"));
                     //item.SubItems.Add("0x" + secondWord.ToString("x8"));
                     //item.SubItems.Add("0x" + thirdWord.ToString("x8"));
@@ -680,7 +695,7 @@ namespace armsimGUI
                 else break;
             }
 
-            updateStackPanel();
+            updateStackPanel(findBtnClick);
         }
 
         //--------------------------------------------------------------
