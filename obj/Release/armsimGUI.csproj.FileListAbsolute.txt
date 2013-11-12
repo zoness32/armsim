@@ -1,0 +1,10 @@
+C:\Users\Taylor\Documents\GitHub\armsim\obj\Release\armsimGUI.csprojResolveAssemblyReference.cache
+C:\Users\Taylor\Documents\GitHub\armsim\obj\Release\armsimGUI.armsimGUI.resources
+C:\Users\Taylor\Documents\GitHub\armsim\obj\Release\armsimGUI.csproj.GenerateResource.Cache
+C:\Users\Taylor\Documents\GitHub\armsim\bin\Release\CommandLine.xml
+C:\Users\Taylor\Documents\GitHub\armsim\bin\Release\armsim.exe.config
+C:\Users\Taylor\Documents\GitHub\armsim\obj\Release\armsim.Properties.Resources.resources
+C:\Users\Taylor\Documents\GitHub\armsim\bin\Release\armsim.exe
+C:\Users\Taylor\Documents\GitHub\armsim\bin\Release\armsim.pdb
+C:\Users\Taylor\Documents\GitHub\armsim\obj\Release\armsim.exe
+C:\Users\Taylor\Documents\GitHub\armsim\obj\Release\armsim.pdb
