@@ -7,8 +7,8 @@
     <ProjectGuid>{E3FE2298-017C-40B6-9121-9E6045DAD742}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>armsimGUIdebugged</RootNamespace>
-    <AssemblyName>armsimGUI-debugged</AssemblyName>
+    <RootNamespace>armsim</RootNamespace>
+    <AssemblyName>armsim</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
